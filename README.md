@@ -1,4 +1,4 @@
-# Demon Slayer 2D RPG Web Game
+# Demon Slayer 2D RPG Web Game MADE WITH AI
 
 This is a lightweight, 2D open-world action RPG web game inspired by Demon Slayer, built using only HTML, CSS, and vanilla JavaScript with Canvas API. The game is fully playable from a static web page and can be hosted on GitHub Pages.
 
