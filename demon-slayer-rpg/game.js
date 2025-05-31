@@ -1,14 +1,11 @@
-
 import { Player } from './player.js';
 import { UI } from './ui.js';
-import { Enemy, EnemySpawner } from './enemy.js';
+import { EnemySpawner } from './enemy.js';
 import { Map } from './map.js';
 import { NPC, Quest } from './npc.js';
 import { Storage } from './storage.js';
 
-// Demon Slayer 2D RPG - Main Game Script
-
-// Engine Layer
+// Renderer class for canvas drawing
 class Renderer {
   constructor(canvas) {
     this.canvas = canvas;
@@ -24,17 +21,6 @@ class Renderer {
   drawRect(x, y, w, h, color) {
     this.ctx.fillStyle = color;
     this.ctx.fillRect(x, y, w, h);
-  }
-
-  drawText(text, x, y, color = '#fff', font = '16px monospace') {
-    this.ctx.fillStyle = color;
-    this.ctx.font = font;
-    this.ctx.fillText(text, x, y);
-  }
-
-  // Placeholder for sprite drawing
-  drawSprite(img, x, y, w, h) {
-    this.ctx.drawImage(img, x, y, w, h);
   }
 }
 
@@ -78,7 +64,6 @@ class Collision {
   }
 }
 
-// Main Game Class
 class Game {
   constructor() {
     this.canvas = document.getElementById('gameCanvas');
@@ -107,7 +92,6 @@ class Game {
   }
 
   start() {
-    // Load saved game state if available
     const savedQuestProgress = Storage.loadGame(this.player);
     if (savedQuestProgress !== null) {
       this.questProgress = savedQuestProgress;
@@ -150,16 +134,15 @@ class Game {
     // Update NPC dialogues interaction
     if (this.input.isKeyDown('e')) {
       this.npcs.forEach(npc => {
-        // Check proximity to player
         const dx = npc.x * this.map.tileSize - this.player.x;
         const dy = npc.y * this.map.tileSize - this.player.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
         if (distance < 50) {
           const dialogue = npc.interact(this.player);
           if (dialogue) {
-            this.showDialogue(dialogue);
+            this.ui.showDialogue(dialogue);
           } else {
-            this.hideDialogue();
+            this.ui.hideDialogue();
           }
         }
       });
@@ -167,7 +150,6 @@ class Game {
 
     this.ui.update();
 
-    // Save game state periodically
     Storage.saveGame(this.player, this.questProgress);
   }
 
@@ -177,18 +159,6 @@ class Game {
     this.player.draw(this.renderer);
     this.enemySpawner.draw(this.renderer);
     this.npcs.forEach(npc => npc.draw(this.renderer, this.map.tileSize));
-  }
-
-  showDialogue(text) {
-    const dialogueBox = document.getElementById('dialogue-box');
-    const dialogueText = document.getElementById('dialogue-text');
-    dialogueText.textContent = text;
-    dialogueBox.classList.remove('hidden');
-  }
-
-  hideDialogue() {
-    const dialogueBox = document.getElementById('dialogue-box');
-    dialogueBox.classList.add('hidden');
   }
 }
 

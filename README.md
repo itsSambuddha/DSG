@@ -1,45 +1,48 @@
-# Demon Slayer 2D RPG Web Game
+# Demon Slayer 2D RPG
 
-This is a lightweight, 2D open-world action RPG web game inspired by Demon Slayer, built using only HTML, CSS, and vanilla JavaScript with Canvas API. The game is fully playable from a static web page and can be hosted on GitHub Pages.
+This is a lightweight 2D action RPG browser game inspired by Demon Slayer anime. It is built using pure HTML, CSS, and JavaScript without any frameworks, and runs entirely from static files. It is optimized for deployment on GitHub Pages.
 
 ## Features
 
-- Pixel-art style Demon Slayer-inspired character with sword attacks and breathing skills.
-- Enemies spawn and patrol predefined zones.
-- Health, stamina (breathing meter), and XP bars.
-- WASD movement and J/K/L/I keys or mouse clicks for attacks.
-- Minimap with player location and quest indicators.
-- Quest system with NPCs and interactive dialogue.
-- Save and load progress using browser localStorage.
-- Modular, well-commented code.
-- Optimized for performance and under 10MB total size.
+- Pixel-art style with retro fonts and UI
+- Player movement with W/A/S/D keys
+- Attack with J key, special skills with K and L keys
+- Interact with NPCs using E key
+- Enemies with basic AI, health, and attacks
+- Tile-based map with obstacles and NPCs
+- Health, stamina, and XP bars with level-ups
+- Quest system with dialogue trees and rewards
+- Game state saving and loading using localStorage
 
-## How to Play
+## How to Run
 
-- Move: W, A, S, D keys
-- Basic Attack: J key
-- Special Skills: K, L, I keys
-- Interact with NPCs: E key (to be implemented)
-- Save Game: Automatically saves progress in localStorage
+1. Clone or download the repository.
+2. Open `index.html` in a modern web browser (Chrome, Firefox, Edge).
+3. Play the game directly from the static files, no server required.
 
-## Deployment on GitHub Pages
+## Controls
 
-1. Create a new GitHub repository and push all files (`index.html`, `style.css`, `game.js`, `assets/`, `README.md`).
-2. Go to the repository's **Settings** > **Pages**.
-3. Under **Source**, select the branch (usually `main` or `master`) and root folder (`/`).
-4. Save and wait a few minutes for GitHub Pages to publish the site.
-5. Access your game at `https://<your-username>.github.io/<repository-name>/`.
+- W/A/S/D: Move player
+- J: Basic attack
+- K/L: Special skills (breathing techniques)
+- E: Interact with NPCs
 
-## Development
+## Project Structure
 
-- The game code is modular and divided into engine, game logic, and UI layers.
-- Assets are stored locally or embedded as base64.
-- The game uses the Canvas API for rendering.
+- `index.html`: Main HTML file with canvas and UI elements
+- `style.css`: Styles for canvas and UI
+- `game.js`: Main game controller and loop
+- `player.js`: Player class and logic
+- `enemy.js`: Enemy class and spawn logic
+- `map.js`: Tile-based map rendering and collision
+- `npc.js`: NPC class with dialogue and quests
+- `storage.js`: Save/load game state using localStorage
+- `assets/`: Folder for images and sprites (currently placeholders)
 
-## License
+## Notes
 
-This project is open source and free to use.
-
----
+- The game uses ES6 modules; ensure your browser supports them.
+- The game is optimized for 800x600 resolution.
+- All assets are placeholders; you can replace them with your own pixel art.
 
 Enjoy playing the Demon Slayer 2D RPG!
