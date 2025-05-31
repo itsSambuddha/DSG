@@ -1,4 +1,4 @@
-# Demon Slayer 2D RPG
+# Demon Slayer 2D RPG Web Game
 
 This is a lightweight 2D action RPG browser game inspired by Demon Slayer anime. It is built using pure HTML, CSS, and JavaScript without any frameworks, and runs entirely from static files. It is optimized for deployment on GitHub Pages.
 
