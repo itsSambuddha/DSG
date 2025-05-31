@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Demon Slayer 2D RPG</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="gameCanvas" width="800" height="600"></canvas>
+
+  <div id="ui">
+    <div id="top-ui">
+      <div id="health-bar" class="bar">
+        <div class="fill" style="width: 100%; background-color: red;"></div>
+      </div>
+      <div id="stamina-bar" class="bar">
+        <div class="fill" style="width: 100%; background-color: blue;"></div>
+      </div>
+      <div id="xp-bar" class="bar">
+        <div class="fill" style="width: 0%; background-color: green;"></div>
+      </div>
+    </div>
+    <div id="minimap"></div>
+    <div id="skill-bar">
+      <button id="skill-basic" class="skill-button">J</button>
+      <button id="skill-1" class="skill-button">K</button>
+      <button id="skill-2" class="skill-button">L</button>
+      <button id="skill-3" class="skill-button">I</button>
+    </div>
+    <div id="dialogue-box" class="hidden">
+      <p id="dialogue-text"></p>
+      <button id="dialogue-next">Next</button>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
